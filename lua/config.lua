@@ -6,7 +6,8 @@ vim.o.smarttab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.completeopt = "menu,noselect"
-vim.o.mouse =
+vim.o.mouse = false
+vim.o.nu = true
 
 lspconfig({
   virtual_text = {
