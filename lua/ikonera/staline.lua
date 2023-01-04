@@ -1,0 +1,8 @@
+local ok, staline = pcall(require, "staline")
+if not ok then
+  print("[Staline] plugin require error")
+end
+
+staline.setup({
+
+})
