@@ -47,7 +47,7 @@ masonlsp.setup({
 
 for _, server in ipairs(masonlsp.get_installed_servers()) do
   if server == "sumneko_lua" then
-    lspconfig.sumneko_lua.setup({
+    lspconfig[server].setup({
       capabilities = capabilities,
       settings = {
         Lua = {
@@ -58,6 +58,9 @@ for _, server in ipairs(masonlsp.get_installed_servers()) do
           diagnostics = {
             -- Get the language server to recognize the `vim` global
             globals = {'vim'},
+          },
+          completion = {
+            callSnippet = "Replace",
           },
           workspace = {
             -- Make the server aware of Neovim runtime files
