@@ -53,6 +53,8 @@ packer.startup(function(use)
 
   use "onsails/lspkind.nvim"
 
+  use "jose-elias-alvarez/null-ls.nvim"
+
 end)
 
 vim.cmd([[
