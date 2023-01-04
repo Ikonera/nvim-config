@@ -39,6 +39,7 @@ masonlsp.setup({
     "zk",
     "html",
     "emmet_ls",
+    "dockerls",
   },
   automatic_installation = false
 })
