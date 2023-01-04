@@ -8,7 +8,12 @@ local fb_actions = telescope.extensions.file_browser.actions
 telescope.setup({
   defaults = {
     sorting_strategy = "ascending",
-    selection_caret = " "
+    selection_caret = " ",
+    file_ignore_patterns = {
+      ".git/",
+      "node_modules/",
+      ".yarn/cache/",
+    }
   },
   pickers = {
     find_files = {
