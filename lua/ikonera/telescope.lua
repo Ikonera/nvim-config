@@ -9,6 +9,7 @@ telescope.setup({
   defaults = {
     sorting_strategy = "ascending",
     selection_caret = " ",
+		dynamic_preview_title = true,
     file_ignore_patterns = {
       ".git/",
       "node_modules/",
@@ -18,6 +19,8 @@ telescope.setup({
   pickers = {
     find_files = {
       prompt_prefix = "$ ",
+			results_title = "Found files",
+			prompt_title = "What are you searching for ?"
     },
     live_grep = {
       prompt_prefix = "  "
