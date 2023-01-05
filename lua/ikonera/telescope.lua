@@ -3,6 +3,11 @@ if not ok then
 	print("[Telescope] plugin require error.")
 end
 
+local ok, t_actions = pcall(require, "telescope.actions")
+if not ok then
+	print("[Telescope] actions-state require error.")
+end
+
 local fb_actions = telescope.extensions.file_browser.actions
 
 telescope.setup({
@@ -24,6 +29,13 @@ telescope.setup({
 		},
 		live_grep = {
 			prompt_prefix = "  ",
+		},
+		buffers = {
+			mappings = {
+				n = {
+					d = t_actions.delete_buffer,
+				},
+			},
 		},
 	},
 	extensions = {
