@@ -28,7 +28,7 @@ nkey("v", "<space>y", '"+y') -- copy things system's clipboard wide
 nkey("n", "ff", ":Telescope find_files hidden=true<CR>", opts)
 nkey("n", "fb", ":Telescope buffers<CR>", opts)
 nkey("n", "fg", ":Telescope live_grep<CR>", opts)
-nkey("n", "ls", ":Telescope file_browser<CR>", opts)
+nkey("n", "<space>ls", ":Telescope file_browser<CR>", opts)
 
 -- native lsp
 
