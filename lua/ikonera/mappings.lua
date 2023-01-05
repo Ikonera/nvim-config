@@ -1,4 +1,4 @@
-local nkey = vim.api.nvim_set_keymap
+local nkey = vim.keymap.set
 local opts = { noremap = true, silent = true, nowait = true }
 
   -- basic keymaps
@@ -10,6 +10,18 @@ nkey('n', "<space>c", ":clo<CR>", opts)
 nkey('n', "<space>t", ":term<CR>", opts)
 nkey('n', "<space>lg", ":term lazygit<CR>", opts)
 nkey('n', "<space>ld", ":term lazydocker<CR>", opts)
+
+  -- theprimeagen greatest keymaps
+
+nkey('v', 'J', ":m '>+1<CR>gv=gv'")
+nkey('v', 'K', ":m '<-2<CR>gv=gv'")
+nkey('x', '<space>p', "\"_dP")
+
+nkey('n', "<space>r", ":%s/\\<<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>")
+
+  -- asbjornHaland greatest keymaps
+
+nkey('v', '<space>y', "\"+y") -- copy things system's clipboard wide
 
   -- telescope
 
