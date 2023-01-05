@@ -76,6 +76,8 @@ packer.startup({
 
 		use("numToStr/Comment.nvim")
 
+		use("norcalli/nvim-colorizer.lua")
+
 		if packer_bootstrap then
 			packer.sync()
 		end

@@ -72,3 +72,8 @@ local ok, _ = pcall(require, "ikonera.comment")
 if not ok then
 	print("[Init] comment import error.")
 end
+
+local ok, _ = pcall(require, "ikonera.color")
+if not ok then
+	print("[Init] color import error.")
+end
