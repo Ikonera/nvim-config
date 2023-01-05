@@ -8,6 +8,9 @@ vim.o.tabstop = 2
 vim.o.completeopt = "menu,noselect"
 vim.o.mouse = false
 vim.o.nu = true
+vim.o.rnu = true
+vim.o.swapfile = false
+vim.o.updatetime = 50
 
 lspconfig({
   virtual_text = {
