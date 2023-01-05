@@ -1,41 +1,55 @@
 local nkey = vim.keymap.set
 local opts = { noremap = true, silent = true, nowait = true }
 
-  -- basic keymaps
+-- basic keymaps
 
-nkey('n', "<space>w", ":w<CR>", opts)
-nkey('n', "<space>q", ":x<CR>", opts)
-nkey('n', "<space>d", ":bd<CR>", opts)
-nkey('n', "<space>c", ":clo<CR>", opts)
-nkey('n', "<space>t", ":term<CR>", opts)
-nkey('n', "<space>lg", ":term lazygit<CR>", opts)
-nkey('n', "<space>ld", ":term lazydocker<CR>", opts)
+nkey("n", "<space>w", ":w<CR>", opts)
+nkey("n", "<space>q", ":x<CR>", opts)
+nkey("n", "<space>d", ":bd<CR>", opts)
+nkey("n", "<space>c", ":clo<CR>", opts)
+nkey("n", "<space>t", ":term<CR>", opts)
+nkey("n", "<space>lg", ":term lazygit<CR>", opts)
+nkey("n", "<space>ld", ":term lazydocker<CR>", opts)
 
-  -- theprimeagen greatest keymaps
+-- theprimeagen greatest keymaps
 
-nkey('v', 'J', ":m '>+1<CR>gv=gv'")
-nkey('v', 'K', ":m '<-2<CR>gv=gv'")
-nkey('x', '<space>p', "\"_dP")
+nkey("v", "J", ":m '>+1<CR>gv=gv'")
+nkey("v", "K", ":m '<-2<CR>gv=gv'")
+nkey("x", "<space>p", '"_dP')
 
-nkey('n', "<space>r", ":%s/\\<<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>")
+nkey("n", "<space>r", ":%s/\\<<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>")
 
-  -- asbjornHaland greatest keymaps
+-- asbjornHaland greatest keymaps
 
-nkey('v', '<space>y', "\"+y") -- copy things system's clipboard wide
+nkey("v", "<space>y", '"+y') -- copy things system's clipboard wide
 
-  -- telescope
+-- telescope
 
-nkey('n', "ff", ":Telescope find_files hidden=true<CR>", opts)
-nkey('n', "fb", ":Telescope buffers<CR>", opts)
-nkey('n', "fg", ":Telescope live_grep<CR>", opts)
-nkey('n', "fn", ":Telescope file_browser<CR>", opts)
+nkey("n", "ff", ":Telescope find_files hidden=true<CR>", opts)
+nkey("n", "fb", ":Telescope buffers<CR>", opts)
+nkey("n", "fg", ":Telescope live_grep<CR>", opts)
+nkey("n", "ls", ":Telescope file_browser<CR>", opts)
 
-  -- native lsp
+-- native lsp
 
-nkey('n', "gd", function() vim.lsp.buf.definition() end, opts)
-nkey('n', "gh", function() vim.lsp.buf.hover() end, opts)
-nkey('n', "gr", function() vim.lsp.buf.references() end, opts)
-nkey('n', "ga", function() vim.lsp.buf.code_action() end, opts)
-nkey('n', "R", function() vim.lsp.buf.rename() end, opts)
-nkey('n', "[", function() vim.diagnostic.goto_prev() end, opts)
-nkey('n', "]", function() vim.diagnostic.goto_next() end, opts)
+nkey("n", "gd", function()
+	vim.lsp.buf.definition()
+end, opts)
+nkey("n", "gh", function()
+	vim.lsp.buf.hover()
+end, opts)
+nkey("n", "gr", function()
+	vim.lsp.buf.references()
+end, opts)
+nkey("n", "ga", function()
+	vim.lsp.buf.code_action()
+end, opts)
+nkey("n", "R", function()
+	vim.lsp.buf.rename()
+end, opts)
+nkey("n", "[", function()
+	vim.diagnostic.goto_prev()
+end, opts)
+nkey("n", "]", function()
+	vim.diagnostic.goto_next()
+end, opts)
