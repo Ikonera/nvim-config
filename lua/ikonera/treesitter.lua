@@ -15,6 +15,7 @@ treesitter.setup({
 		"json",
 		"yaml",
 		"dockerfile",
+		"bash",
 	},
 	auto_install = true,
 })
