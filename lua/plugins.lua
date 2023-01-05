@@ -47,7 +47,6 @@ packer.startup(function(use)
 
   use "rcarriga/nvim-notify"
 
-  use "glepnir/lspsaga.nvim"
 
   use "nvim-tree/nvim-web-devicons"
 

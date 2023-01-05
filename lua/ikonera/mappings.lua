@@ -30,12 +30,12 @@ nkey('n', "fb", ":Telescope buffers<CR>", opts)
 nkey('n', "fg", ":Telescope live_grep<CR>", opts)
 nkey('n', "fn", ":Telescope file_browser<CR>", opts)
 
-  -- Lspsaga
+  -- native lsp
 
-nkey('n', "gd", ":Lspsaga peek_definition<CR>", opts)
-nkey('n', "gf", ":Lspsaga lsp_finder<CR>", opts)
-nkey('n', "gh", ":Lspsaga hover_doc<CR>", opts)
-nkey('n', "ga", ":Lspsaga code_action<CR>", opts)
-nkey('n', "R", ":Lspsaga rename<CR>", opts)
-nkey('n', "[", ":Lspsaga diagnostic_jump_prev<CR>", opts)
-nkey('n', "]", ":Lspsaga diagnostic_jump_next<CR>", opts)
+nkey('n', "gd", function() vim.lsp.buf.definition() end, opts)
+nkey('n', "gh", function() vim.lsp.buf.hover() end, opts)
+nkey('n', "gr", function() vim.lsp.buf.references() end, opts)
+nkey('n', "ga", function() vim.lsp.buf.code_action() end, opts)
+nkey('n', "R", function() vim.lsp.buf.rename() end, opts)
+nkey('n', "[", function() vim.diagnostic.goto_prev() end, opts)
+nkey('n', "]", function() vim.diagnostic.goto_next() end, opts)

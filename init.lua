@@ -58,11 +58,6 @@ if not ok then
   print("[Init] notify import error.")
 end
 
-local ok, _ = pcall(require, "ikonera.saga")
-if not ok then
-  print("[Init] saga import error.")
-end
-
 local ok, _ = pcall(require, "ikonera.chatgpt")
 if not ok then
   print("[Init] chatgpt import error.")
