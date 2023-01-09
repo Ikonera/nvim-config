@@ -19,6 +19,7 @@ telescope.setup({
 			".git/",
 			"node_modules/",
 			".yarn/cache/",
+			".yarn/sdks/",
 			".next/",
 			"build/",
 		},
