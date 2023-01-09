@@ -19,6 +19,8 @@ telescope.setup({
 			".git/",
 			"node_modules/",
 			".yarn/cache/",
+			".next/",
+			"build/",
 		},
 	},
 	pickers = {
