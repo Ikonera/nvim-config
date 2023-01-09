@@ -79,6 +79,20 @@ for _, server in ipairs(masonlsp.get_installed_servers()) do
 		lspconfig[server].setup({
 			capabilities = capabilities,
 		})
+	elseif server == "emmet_ls" then
+		lspconfig[server].setup({
+			capabilities = capabilities,
+			filetypes = {
+				"typescript",
+				"javascript",
+				"typescriptreact",
+				"javascriptreact",
+				"html",
+				"css",
+				"sass",
+				"scss",
+			},
+		})
 	else
 		lspconfig[server].setup({
 			capabilities = capabilities,
