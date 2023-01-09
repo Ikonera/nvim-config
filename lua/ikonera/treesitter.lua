@@ -7,6 +7,9 @@ treesitter.setup({
 	highlight = {
 		enable = true,
 	},
+	autotag = {
+		enable = true,
+	},
 	ensure_installed = {
 		"lua",
 		"typescript",

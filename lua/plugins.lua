@@ -73,6 +73,8 @@ packer.startup({
 
 		use("norcalli/nvim-colorizer.lua")
 
+		use("windwp/nvim-ts-autotag")
+
 		if packer_bootstrap then
 			packer.sync()
 		end
