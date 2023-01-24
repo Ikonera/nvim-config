@@ -13,7 +13,7 @@ vim.o.swapfile = false
 vim.o.updatetime = 50
 
 lspconfig({
-  virtual_text = {
-    prefix = ""
-  }
+	virtual_text = {
+		prefix = "",
+	},
 })
