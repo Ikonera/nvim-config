@@ -75,6 +75,8 @@ packer.startup({
 
 		use("windwp/nvim-ts-autotag")
 
+		use("glepnir/lspsaga.nvim")
+
 		if packer_bootstrap then
 			packer.sync()
 		end

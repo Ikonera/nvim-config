@@ -53,3 +53,6 @@ end, opts)
 nkey("n", "]", function()
 	vim.diagnostic.goto_next()
 end, opts)
+
+-- Lspsaga
+nkey("n", "gl", ":Lspsaga show_line_diagnostics<CR>", opts)
