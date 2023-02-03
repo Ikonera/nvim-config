@@ -3,6 +3,11 @@ if not ok then
 	print("[Theme] nightfox require error.")
 end
 
+local ok, tokyonight = pcall(require, "tokyonight")
+if not ok then
+	print("[Theme] tokyonight require error.")
+end
+
 nightfox.setup({
 	options = {
 		transparent = false,
@@ -19,6 +24,20 @@ nightfox.setup({
 			types = "",
 			variables = "",
 		},
+	},
+})
+
+tokyonight.setup({
+	style = "moon",
+	transparent = false,
+	terminal_colors = true,
+	styles = {
+		comments = { italic = true },
+		keywords = { italic = true },
+		functions = {},
+		variables = {},
+		sidebars = "dark",
+		floats = "dark",
 	},
 })
 

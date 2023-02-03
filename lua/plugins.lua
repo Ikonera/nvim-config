@@ -77,6 +77,8 @@ packer.startup({
 
 		use("glepnir/lspsaga.nvim")
 
+		use("folke/tokyonight.nvim")
+
 		if packer_bootstrap then
 			packer.sync()
 		end
