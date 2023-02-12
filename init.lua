@@ -18,7 +18,7 @@ if not ok then
 	print("[Init] lsp import error.")
 end
 
-local ok, _ = pcall(require, "ikonera.theme")
+local ok, _ = pcall(require, "ikonera.themes")
 if not ok then
 	print("[Init] theme import error.")
 end
