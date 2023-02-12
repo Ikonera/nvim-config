@@ -34,7 +34,7 @@ mason.setup({
 
 masonlsp.setup({
 	ensure_installed = {
-		"sumneko_lua",
+		"lua_ls",
 		"tsserver",
 		"yamlls",
 		"jsonls",
@@ -50,7 +50,7 @@ masonlsp.setup({
 -- Servers setup
 
 for _, server in ipairs(masonlsp.get_installed_servers()) do
-	if server == "sumneko_lua" then
+	if server == "lua_ls" then
 		lspconfig[server].setup({
 			capabilities = capabilities,
 			settings = {
