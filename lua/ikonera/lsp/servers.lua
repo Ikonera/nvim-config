@@ -23,7 +23,7 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 mason.setup({
 	ui = {
 		height = 0.8,
-		width = 60,
+		width = 140,
 		icons = {
 			package_installed = "",
 			package_uninstalled = "",
