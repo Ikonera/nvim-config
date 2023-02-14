@@ -72,3 +72,8 @@ local ok, _ = pcall(require, "ikonera.color")
 if not ok then
 	print("[Init] color import error.")
 end
+
+local ok, _ = pcall(require, "ikonera.saga")
+if not ok then
+	print("[Init] saga import error.")
+end

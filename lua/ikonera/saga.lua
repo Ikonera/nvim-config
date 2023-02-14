@@ -8,6 +8,9 @@ saga.setup({
 		enable = false,
 		enable_on_insert = false,
 	},
-	border_style = "rounded",
-	saga_winblend = 0,
+	ui = {
+		theme = "round",
+		border = "rounded",
+		windblend = 0,
+	},
 })
