@@ -43,6 +43,7 @@ masonlsp.setup({
 		"emmet_ls",
 		"dockerls",
 		"bashls",
+		"prismals",
 	},
 	automatic_installation = false,
 })
