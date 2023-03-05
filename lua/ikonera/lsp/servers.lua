@@ -30,6 +30,9 @@ mason.setup({
 			package_pending = "",
 		},
 	},
+	pip = {
+		upgrade_pip = true,
+	},
 })
 
 masonlsp.setup({
