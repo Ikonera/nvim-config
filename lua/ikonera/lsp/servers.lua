@@ -47,6 +47,8 @@ masonlsp.setup({
 		"dockerls",
 		"bashls",
 		"prismals",
+		"pyright",
+		"pylsp",
 	},
 	automatic_installation = false,
 })
