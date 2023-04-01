@@ -19,6 +19,7 @@ treesitter.setup({
 		"yaml",
 		"dockerfile",
 		"bash",
+		"python",
 	},
 	auto_install = true,
 })
