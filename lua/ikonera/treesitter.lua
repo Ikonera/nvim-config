@@ -7,6 +7,9 @@ treesitter.setup({
 	highlight = {
 		enable = true,
 	},
+	indent = {
+		enable = true,
+	},
 	autotag = {
 		enable = true,
 	},
@@ -21,5 +24,5 @@ treesitter.setup({
 		"bash",
 		"python",
 	},
-	auto_install = true,
+	auto_install = false,
 })
