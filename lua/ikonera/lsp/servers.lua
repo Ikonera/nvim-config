@@ -87,6 +87,15 @@ for _, server in ipairs(masonlsp.get_installed_servers()) do
 		lspconfig[server].setup({
 			capabilities = capabilities,
 		})
+	elseif server == "yamlls" then
+		lspconfig[server].setup({
+			capabilities = capabilities,
+			settings = {
+				yaml = {
+					schemas = { kubernetes = "*.kube.yaml" },
+				},
+			},
+		})
 	elseif server == "emmet_ls" then
 		lspconfig[server].setup({
 			capabilities = capabilities,
