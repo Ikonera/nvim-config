@@ -1,98 +1,88 @@
-local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-		vim.cmd([[packadd packer.nvim]])
-		return true
-	end
-	return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
+local ok, lazy = pcall(require, "lazy")
 
-local ok, packer = pcall(require, "packer")
 if not ok then
-	print("Packer require error.")
+	print("[Plugins] lazy import error.")
 end
 
-packer.startup({
-	function(use)
-		use("wbthomason/packer.nvim")
-
-		use({
+local plugins = {
+	{
+		"williamboman/mason.nvim",
+		build = ":MasonUpdate",
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		dependencies = {
 			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig",
-		})
-
-		use("windwp/nvim-autopairs")
-
-		use({
-			"hrsh7th/nvim-cmp",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-cmdline",
-			"hrsh7th/cmp-nvim-lsp",
-			"L3MON4D3/LuaSnip",
-			"saadparwaiz1/cmp_luasnip",
-		})
-
-		use("EdenEast/nightfox.nvim")
-
-		use({
-			"nvim-telescope/telescope.nvim",
-			requires = { { "nvim-lua/plenary.nvim" } },
-		})
-
-		-- Telescope extensions
-		use({
-			"ghassan0/telescope-glyph.nvim",
-			"nvim-telescope/telescope-file-browser.nvim",
-		})
-
-		use("nvim-treesitter/nvim-treesitter")
-
-		use("lewis6991/gitsigns.nvim")
-
-		use("tamton-aquib/staline.nvim")
-
-		use("folke/neodev.nvim")
-
-		use("rcarriga/nvim-notify")
-
-		use("nvim-tree/nvim-web-devicons")
-
-		use("onsails/lspkind.nvim")
-
-		use("jose-elias-alvarez/null-ls.nvim")
-
-		use("jayp0521/mason-null-ls.nvim")
-
-		use("numToStr/Comment.nvim")
-
-		use("norcalli/nvim-colorizer.lua")
-
-		use("windwp/nvim-ts-autotag")
-
-		use("glepnir/lspsaga.nvim")
-
-		use("folke/tokyonight.nvim")
-
-		if packer_bootstrap then
-			packer.sync()
-		end
-	end,
-	config = {
-		display = {
-			open_fn = require("packer.util").float,
 		},
 	},
-})
+	"windwp/nvim-autopairs",
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
+	-- Completion engine
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-path",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-cmdline",
+	"hrsh7th/cmp-nvim-lsp",
+	"L3MON4D3/LuaSnip",
+	"saadparwaiz1/cmp_luasnip",
+	-- Themes
+	"EdenEast/nightfox.nvim",
+	-- Telescope extensions
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		dependencies = { { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } } },
+	},
+	"nvim-telescope/telescope-project.nvim",
+	"cljoly/telescope-repo.nvim",
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+	},
+	"lewis6991/gitsigns.nvim",
+	{
+		"tamton-aquib/staline.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	"folke/neodev.nvim",
+	"rcarriga/nvim-notify",
+	"onsails/lspkind.nvim",
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	"jayp0521/mason-null-ls.nvim",
+	"numToStr/Comment.nvim",
+	"norcalli/nvim-colorizer.lua",
+	"windwp/nvim-ts-autotag",
+	"glepnir/lspsaga.nvim",
+	"folke/tokyonight.nvim",
+	"iamcco/markdown-preview.nvim",
+	{
+		"SmiteshP/nvim-navbuddy",
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"SmiteshP/nvim-navic",
+			"MunifTanjim/nui.nvim",
+		},
+	},
+	"voldikss/vim-floaterm",
+	"prisma/vim-prisma",
+}
+
+local opts = {}
+
+lazy.setup(plugins, opts)
