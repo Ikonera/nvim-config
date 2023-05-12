@@ -7,9 +7,9 @@ nkey("n", "<space>w", ":w<CR>", opts)
 nkey("n", "<space>q", ":x<CR>", opts)
 nkey("n", "<space>d", ":bd<CR>", opts)
 nkey("n", "<space>c", ":clo<CR>", opts)
-nkey("n", "<space>t", ":term<CR>", opts)
-nkey("n", "<space>lg", ":term lazygit<CR>", opts)
-nkey("n", "<space>ld", ":term lazydocker<CR>", opts)
+nkey("n", "<space>t", ":FloatermNew --width=0.8 --height=0.8<CR>", opts)
+nkey("n", "<space>lg", ":FloatermNew --width=0.8 --height=0.8 lazygit<CR>", opts)
+nkey("n", "<space>ld", ":FloatermNew --width=0.8 --height=0.8 lazydocker<CR>", opts)
 
 -- theprimeagen greatest keymaps
 
@@ -29,6 +29,10 @@ nkey("n", "ff", ":Telescope find_files hidden=true<CR>", opts)
 nkey("n", "fb", ":Telescope buffers<CR>", opts)
 nkey("n", "fg", ":Telescope live_grep<CR>", opts)
 nkey("n", "<space>ls", ":Telescope file_browser<CR>", opts)
+nkey("n", "tr", ":Telescope repo<CR>", opts)
+nkey("n", "tp", function()
+	require("telescope").extensions.project.project({})
+end, opts)
 
 -- native lsp
 
