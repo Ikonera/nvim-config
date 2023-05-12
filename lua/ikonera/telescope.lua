@@ -43,6 +43,7 @@ telescope.setup({
 	},
 	extensions = {
 		file_browser = {
+			hijack_netrw = true,
 			initial_mode = "normal",
 			mappings = {
 				n = {
@@ -54,8 +55,16 @@ telescope.setup({
 				},
 			},
 		},
+		repo = {
+			list = {
+				search_dirs = {
+					"~/Desktop/Lab",
+				},
+			},
+		},
 	},
 })
 
-telescope.load_extension("glyph")
 telescope.load_extension("file_browser")
+telescope.load_extension("project")
+telescope.load_extension("repo")
