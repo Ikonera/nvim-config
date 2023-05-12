@@ -2,14 +2,14 @@
 
 ## Major plugins
 
-1. Plugin manager : [Packer.nvim](https://github.com/wbthomason/packer.nvim.git)
+1. Plugin manager : [Lazy.nvim](https://github.com/folke/lazy.nvim.git)
 
-  - To update installed plugins, run `:PackerSync`.
-  - To install plugins, run `:PackerInstall <name_of_your_plugin>` or modify the `lua/plugins.lua` file.
+- To update installed plugins, run `:Lazy update`.
+- To install plugins, run `:Lazy install <name_of_your_plugin>` or modify the `lua/plugins.lua` file.
 
 2. Lsp - Language Server Protocol : [Neovim-lspconfig](), [Mason.nvim](https://github.com/williamboman/mason.nvim.git), [Mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim.git)
 
-  - To install new LSP servers, run `:Mason` and select the LSP you that you want. You can also see the list of LSP that are preinstalled wiusing this repo !
+- To install new LSP servers, run `:Mason` and select the LSP you that you want. You can also see the list of LSP that are preinstalled wiusing this repo !
 
 3. Explorer / file picker : [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
 
@@ -56,6 +56,6 @@ Preinstalled themes with this repo :
 
 To install your own :
 
-  - Add it to the `lua/plugins.lua` file.
-  - Configure it by modifying the `lua/ikonera/themes.lua` file.
-  - And replace the theme name at the end of the same file !
+- Add it to the `lua/plugins.lua` file.
+- Configure it by modifying the `lua/ikonera/themes.lua` file.
+- And replace the theme name at the end of the same file !
