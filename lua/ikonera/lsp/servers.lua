@@ -49,6 +49,7 @@ masonlsp.setup({
 		"prismals",
 		"pyright",
 		"pylsp",
+		"rust_analyzer",
 	},
 	automatic_installation = false,
 })
