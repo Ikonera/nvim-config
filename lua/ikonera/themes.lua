@@ -37,8 +37,8 @@ tokyonight.setup({
 		functions = {},
 		variables = {},
 		sidebars = "dark",
-		floats = "dark",
+		floats = "normal",
 	},
 })
 
-vim.cmd("colorscheme nightfox")
+vim.cmd("colorscheme tokyonight-night")
