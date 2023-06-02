@@ -11,6 +11,7 @@ vim.o.nu = true
 vim.o.rnu = true
 vim.o.swapfile = false
 vim.o.updatetime = 50
+vim.o.clipboard = "unnamed"
 
 lspconfig({
 	virtual_text = {
